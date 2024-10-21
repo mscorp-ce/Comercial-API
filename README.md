@@ -19,7 +19,8 @@ Este projeto utiliza o Boss para gerenciar dependências. Para instalar as depen
    
    no git bash execute o comando: cd Comercial-API
 
-2. Instale as dependências: Execute o comando abaixo na raiz do projeto, onde o arquivo boss.json
+2. **Instale as dependências**: Execute o comando abaixo na raiz do projeto, onde o arquivo boss.json
+   
    boss install
 
-3. Compile o projeto: Abra o arquivo .dpr no Delphi e compile o projeto.
+3. **Compile o projeto**: Abra o arquivo .dpr no Delphi e compile o projeto.
