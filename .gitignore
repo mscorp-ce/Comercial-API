@@ -75,8 +75,8 @@ __history/
 __recovery/
 *.~*
 
-# Ignorar o boss.lock
-boss.lock
+# Ignorar o boss.lock.json
+boss.lock.json
 
 # Directory binary and Delphi compiled unit files
 bin/
