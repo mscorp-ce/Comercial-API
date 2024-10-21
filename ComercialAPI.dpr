@@ -11,7 +11,8 @@ uses
   Horse,
   uModel.Abstraction.DataManager in 'src\model\uModel.Abstraction.DataManager.pas',
   uModel.Abstraction.Statement in 'src\model\uModel.Abstraction.Statement.pas',
-  uModel.Abstraction.Repository in 'src\model\uModel.Abstraction.Repository.pas';
+  uModel.Abstraction.Repository in 'src\model\uModel.Abstraction.Repository.pas',
+  uModel.FireDACEngineException in 'src\model\uModel.FireDACEngineException.pas';
 
 begin
   try
