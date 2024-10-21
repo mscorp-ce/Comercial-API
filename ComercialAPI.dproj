@@ -114,6 +114,8 @@
         <DCCReference Include="src\model\uModel.Abstraction.Statement.pas"/>
         <DCCReference Include="src\model\uModel.Abstraction.Repository.pas"/>
         <DCCReference Include="src\model\uModel.FireDACEngineException.pas"/>
+        <DCCReference Include="src\uLibary.pas"/>
+        <DCCReference Include="src\model\uModel.FireDAC.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
