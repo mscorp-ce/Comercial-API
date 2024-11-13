@@ -15,25 +15,28 @@ implementation
 
 { TObjectToJSON }
 
+uses
+  System.Generics.Collections;
+
 class procedure TObjectToJSON.RemovePairJSONValueNull(AJsonObject: TJSONObject);
 var
-  LPair: TJSONPair;
+  Pair: TJSONPair;
   i: Integer;
 begin
   if Assigned(AJsonObject) then
-  begin
-    for i := AJsonObject.Count - 1 downto 0 do
     begin
-      LPair := TJSONPair(AJsonObject.Pairs[i]);
-      if LPair.JsonValue is TJSONObject then
-        RemovePairJSONValueNull(TJSONObject(LPair.JsonValue))
-      else
-      begin
-        if (LPair.JsonValue is TJsonNull ) then
-          AJsonObject.RemovePair(LPair.JsonString.Value).DisposeOf;
-      end;
+      for i := AJsonObject.Count - 1 downto 0 do
+        begin
+          Pair := TJSONPair(AJsonObject.Pairs[i]);
+          if Pair.JsonValue is TJSONObject then
+            RemovePairJSONValueNull(TJSONObject(Pair.JsonValue))
+          else
+            begin
+              if (Pair.JsonValue is TJsonNull ) then
+                AJsonObject.RemovePair(Pair.JsonString.Value).Free();
+            end;
+        end;
     end;
-  end;
 end;
 
 end.
