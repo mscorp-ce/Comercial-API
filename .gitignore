@@ -87,3 +87,7 @@ dcus/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+
+# Aplication Standalone for test memory leaks
+
+Test/
