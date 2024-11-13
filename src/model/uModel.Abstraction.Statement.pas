@@ -11,7 +11,7 @@ type
   ['{A144C1E6-259E-4C9E-8043-9D642E39A6D2}']
     function GetQuery: TFDQuery;
     function SQL(Value: String): IStatement;
-    function Open: IStatement;
+    function Open(): IStatement;
     property Query: TFDQuery read GetQuery;
   end;
 
