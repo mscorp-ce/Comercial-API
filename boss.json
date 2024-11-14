@@ -1,17 +1,19 @@
 {
-	"name": "boss install",
-	"description": "Hose",
-	"version": " 3.1.0.\u001b[3",
-	"homepage": "\u001b[3;2~https://github.com/hashload/horse",
+	"name": "Comercial-API",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
 	"mainsrc": "./src",
 	"projects": [],
 	"dependencies": {
-		"github.com/hashload/handle-exception": "^0.1.4",
-		"github.com/hashload/horse": "^2.0.13",
-		"github.com/hashload/horse-octet-stream": "^1.9.4",
-		"github.com/hashload/jhonson": "^1.1.1",
-		"github.com/viniciussanchez/bcrypt": "^1.0.8",
-		"https://github.com/viniciussanchez/dataset-serialize": "^v2.3.1",
-		"https://github.com/pleriche/FastMM4": "main"
+		"github.com/hashload/handle-exception": "^0.1.9",
+		"github.com/hashload/horse": "^3.1.6",
+		"github.com/hashload/horse-compression": "^1.1.11",
+		"github.com/hashload/horse-jwt": "^2.0.14",
+		"github.com/hashload/horse-octet-stream": "^1.9.11",
+		"github.com/hashload/jhonson": "^1.1.9",
+		"github.com/viniciussanchez/dataset-serialize": "^v2.5.9",
+		"https://github.com/pleriche/FastMM4": "main",
+		"https://github.com/viniciussanchez/bcrypt": "^1.0.8"
 	}
 }

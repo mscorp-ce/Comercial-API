@@ -11,10 +11,11 @@ uses
   System.Classes,
   Winapi.Windows,
   Horse,
-  Horse.JWT,
+  Horse.Compression,
   Horse.Jhonson,
-  Horse.OctetStream,
   Horse.HandleException,
+  Horse.OctetStream,
+  Horse.JWT,
   uModel.Abstraction.DataManager in 'src\model\uModel.Abstraction.DataManager.pas',
   uModel.Abstraction.Statement in 'src\model\uModel.Abstraction.Statement.pas',
   uModel.Abstraction.Service in 'src\model\uModel.Abstraction.Service.pas',
@@ -62,6 +63,7 @@ begin
     { TODO -oUser -cConsole Main : Insert code here }
 
     THorse
+      .Use(Compression())
       .Use(Jhonson())
       .Use(HandleException)
       .Use(OctetStream);

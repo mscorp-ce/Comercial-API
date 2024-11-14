@@ -38,10 +38,10 @@ begin
 
   Service := TUsuarioService.Create();
 
-  var List := Service.ListAll(Request.Query);
+  var List := Service.ListAll(Request.Query.Dictionary);
   try
     Retorno.AddPair('data', DataConverter.Execute(List, ['Senha', 'Foto']));
-    Retorno.AddPair('records', TJSONNumber.Create(Service.GetRecords(Request.Query)));
+    Retorno.AddPair('records', TJSONNumber.Create(Service.GetRecords(Request.Query.Dictionary)));
 
   finally
     List.Free();
@@ -62,7 +62,10 @@ begin
     var Usuario := Service.GetById(IdUsuario);
 
     if not Assigned(Usuario) then
-      raise EHorseException.Create(THTTPStatus.NotFound, 'Usuário não cadastrado');
+      raise EHorseException.New
+        .Error('Usuário não cadastrado')
+        .&Type(TMessageType.Error)
+        .Status(THTTPStatus.NotFound);
 
     try
       var JSONObj := Request.Body<TJSONObject>;
@@ -104,7 +107,10 @@ begin
   try
     try
       if not Assigned(Usuario) then
-         raise EHorseException.Create(THTTPStatus.NotFound, 'Usuário não encontrado.');
+         raise EHorseException.New
+        .Error('Usuário não encontrado')
+        .&Type(TMessageType.Error)
+        .Status(THTTPStatus.NotFound);
 
       if Service.Remove(Usuario) then
         Response.Status(THTTPStatus.NoContent);
@@ -139,7 +145,10 @@ begin
   var Usuario := Service.GetById(IdUsuario);
   try
     if not Assigned(Usuario) then
-       raise EHorseException.Create(THTTPStatus.NotFound, 'Usuário não encontrado.');
+      raise EHorseException.New
+        .Error('Usuário não encontrado')
+        .&Type(TMessageType.Error)
+        .Status(THTTPStatus.NotFound);
 
     var Retorno := DataConverter.Execute(Usuario, ['Senha', 'Foto']);
 
@@ -192,12 +201,18 @@ begin
     var Usuario := Service.GetById(IdUsuario);
     try
       if not Assigned(Usuario) then
-         raise EHorseException.Create(THTTPStatus.NotFound, 'Usuário não encontrado.');
+        raise EHorseException.New
+          .Error('Usuário não encontrado')
+          .&Type(TMessageType.Error)
+          .Status(THTTPStatus.NotFound);
 
       var Photo := Request.Body<TMemoryStream>;
 
       if not Assigned(Photo) then
-        raise EHorseException.Create(THTTPStatus.BadRequest, 'Foto inválida.');
+        raise EHorseException.New
+          .Error('Foto inválida')
+          .&Type(TMessageType.Error)
+          .Status(THTTPStatus.BadRequest);
 
       if Service.SavePhoto(Usuario, Photo) then
         Response.Status(THTTPStatus.NoContent);
@@ -220,12 +235,18 @@ begin
     var Usuario := Service.GetById(IdUsuario);
     try
       if not Assigned(Usuario) then
-         raise EHorseException.Create(THTTPStatus.NotFound, 'Usuário não encontrado.');
+        raise EHorseException.New
+          .Error('Usuário não encontrado')
+          .&Type(TMessageType.Error)
+          .Status(THTTPStatus.NotFound);
 
       var Photo := Service.GetPthoById(Usuario);
 
       if not Assigned(Photo) then
-        raise EHorseException.Create(THTTPStatus.NotFound, 'Foto não cadastrada.');
+        raise EHorseException.New
+          .Error('Foto não cadastrada')
+          .&Type(TMessageType.Error)
+          .Status(THTTPStatus.NotFound);
 
       Response.Send(Photo).Status(THTTPStatus.OK);
 
