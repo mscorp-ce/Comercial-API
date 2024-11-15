@@ -33,6 +33,6 @@ Este projeto utiliza o Boss para gerenciar dependências. Para instalar as depen
 
     ***Database=Comercial*** pode ficar com o nome que esta no Script.sql, caso você informar outro nome deve modificar o valor da chave.
     
-    ***User_Name=sa*** Foi utiliado o usuario padrão do MSMSQL, ou seja, "sa", caso for usar outro usuario modificque o valor da chave
+    ***User_Name=sa*** Foi utiliado o usuario padrão do MSSQL, ou seja, "sa", caso for usar outro usuario modificque o valor da chave
     
     ***Password=sua senha de usuario no MSSQL:*** Modifique para sua senha do MSSQL
