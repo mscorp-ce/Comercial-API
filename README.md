@@ -10,6 +10,8 @@ Este projeto utiliza o Boss para gerenciar dependências. Para instalar as depen
 
 - Delphi Rio ou superior
 
+- Banco de Dados: MSSQL Server
+
 - Certifique-se de ter o [Boss](https://github.com/HashLoad/boss) instalado no seu ambiente Delphi.
 
 ### Passos para Instalação
